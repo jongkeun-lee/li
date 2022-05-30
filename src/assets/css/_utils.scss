@@ -1,0 +1,291 @@
+@import url("https://use.typekit.net/iae3atj.css");
+
+// float clear
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+@mixin ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+@mixin ios {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}
+// media query
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1280px;
+
+@mixin respond-to($media) {
+  @if $media== "small" {
+    @media only screen and (max-width: $break-small) {
+      @content;
+    }
+  } @else if $media== "medium" {
+    @media only screen and (max-width: $break-medium) {
+      @content;
+    }
+  } @else if $media== "small-medium" {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) {
+      @content;
+    }
+  } @else if $media== "medium-large" {
+    @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) {
+      @content;
+    }
+  } @else if $media== "large" {
+    @media only screen and (max-width: $break-large - 1) {
+      @content;
+    }
+  } @else if $media== "large-over" {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  }
+}
+@mixin back-img($url: none, $positionX: center, $positionY: center) {
+  background-repeat: no-repeat;
+  background-position-x: $positionX;
+  background-position-y: $positionY;
+  background-image: url($url);
+}
+
+@mixin pos-center(
+  $pos: absolute,
+  $top: 50%,
+  $left: 50%,
+  $right: none,
+  $bottom: none,
+  $tY: -50%,
+  $tX: -50%,
+  $ro: 0
+) {
+  position: $pos;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  transform: translateX($tX) translateY($tY) rotate($ro);
+}
+@mixin pos-pre($top: 0, $left: none, $right: 0, $bottom: none, $tY: 0, $tX: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  transform: translateX($tX) translateY($tY);
+}
+@mixin montserrat($weight: 700, $color: #a57459, $size: 16px, $sp: 1px) {
+  color: $color;
+  font-family: "Montserrat";
+  font-weight: $weight;
+  letter-spacing: $sp;
+  font-size: $size;
+}
+@mixin triangle {
+  border-top: 6px solid transparent;
+  border-left: 8px solid #888;
+  border-bottom: 6px solid transparent;
+}
+@mixin nodatawrap {
+  padding-bottom: 44px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+@mixin nodata {
+  padding-top: 140px;
+  @include back-img($url: "../images/bg_icon_nodata.png", $positionY: 40%);
+  p {
+    padding: 10px 0 17px;
+  }
+  a {
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+}
+@mixin infobox {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 22px 20px 20px 20px;
+  position: relative;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  .title {
+    font-size: 18px;
+    color: #372511;
+    font-weight: normal;
+    line-height: 26px;
+  }
+  .desc {
+    margin-bottom: 22px;
+    font-size: 13px;
+    width: calc(100% - 65px);
+  }
+  .link {
+    &.call_number {
+      @include montserrat(700, #a57459);
+    }
+  }
+  img {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+  }
+}
+@mixin maintitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@mixin centerWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+@mixin greyBox {
+  border: 1px solid #dfd2c3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 8px #dedede5e;
+}
+@mixin cover_img($fit: cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $fit;
+}
+
+@mixin one_line {
+  br {
+    display: none;
+  }
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin 말줄임_여러줄($num: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: $num;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+@mixin 이미지_꽉채우기 {
+  /*ie호환 가능- 부모 영역에 position: relative; 속성 적용 필요*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+$font-size-base: 18px;
+$font-size-min: 14px;
+$breakpoint-desktop: 1280px;
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;
+$breakpoint-min: 640px;
+.__grid {
+  display: flex;
+  gap: __to_rem(16px, $font-size-base);
+  // margin: __to_rem(-8px, $font-size-base);
+
+  &.col {
+    flex-direction: column;
+  }
+
+  &.row {
+    font-size: inherit;
+  }
+
+  .grid_box {
+    display: flex;
+    gap: __to_rem(16px, $font-size-base);
+    // margin: __to_rem(8px, $font-size-base);
+
+    .grid_2 {
+      width: __to_vw(872px, 1920px);
+      height: __to_vw(872px, 1920px);
+      max-width: 872px;
+      max-height: 872px;
+    }
+
+    .grid_3 {
+      width: __to_vw(576px, 1920px);
+      height: __to_vw(576px, 1920px);
+      max-width: 576px;
+      max-height: 872px;
+    }
+  }
+}
+@mixin ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+@include ie {
+  .__grid {
+    & > * + * {
+      margin-left: __to_rem(16px, $font-size-base);
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-left: __to_rem(10px, $font-size-min);
+      }
+    }
+  }
+  .__grid.col {
+    & > * + * {
+      margin-left: 0;
+      margin-top: __to_rem(16px, $font-size-base);
+      @media screen and (max-width: $breakpoint-tablet) {
+        margin-top: __to_rem(10px, $font-size-min);
+      }
+    }
+  }
+}
+
+$color1: #812b29;
+
+@keyframes gradientAni {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -415%;
+  }
+}
+
+@keyframes auroraShadow {
+  0% {
+    top: 35%;
+    width: 20%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 100%;
+    width: 80%;
+    opacity: 1;
+  }
+}

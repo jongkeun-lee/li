@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: 'App',
-}
+  name: "App",
+};
 </script>
 
 <style lang="scss">
-  @import './assets/css/app.scss';
+@import "./assets/css/app.scss";
 </style>

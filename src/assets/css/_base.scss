@@ -1,6 +1,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  font-size: 10px;
 }
 
 body {
@@ -137,7 +138,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 fieldset {
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
   margin: 0 2px;
   border: 1px solid #c0c0c0;
 }
@@ -186,6 +187,34 @@ p {
 i,
 em,
 b {
-  font-style: normal;
-  font-weight: 300;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+canvas {
+  margin: 0;
+  padding: 0;
+}
+
+/* class */
+.fc-b {
+  color: #569cd6;
+}
+.fc-v {
+  color: #c586c0;
+}
+.fc-g {
+  color: #3ac9b0;
+}
+.fc-y {
+  color: #ffd709;
+}
+.fc-s {
+  color: #9cdcfe;
+}
+.fc-o {
+  color: #ce9178;
+}
+.fc-a {
+  color: #d4d4d4;
 }

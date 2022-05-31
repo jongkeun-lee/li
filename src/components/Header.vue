@@ -1,14 +1,21 @@
 <template>
   <header>
     <div class="inner">
-      <h1>
-        <a>
-          <p><span class="fc-v"><b>L</b><b>i</b></span></p>
-        </a>
-      </h1>
-      <div>
+      <router-link
+        to="/index"
+        class="introLogo"
+        @mouseover="$emit('darkModeOn')"
+        @mouseout="$emit('darkModeOff')"
+      >
+        <strong> <b>L</b><b>i</b> </strong>
+        <em>
+          <span class="fc-s">에라히 : </span>
+          <span class="fc-o">Professional Front-end Development Team</span>
+        </em>
+      </router-link>
+      <!-- <div>
         <strong>MetaSecond</strong>님 반갑습니다.
-      </div>
+      </div> -->
       <!-- <button class="gnb">
         <i></i>
         <i></i>
@@ -20,13 +27,10 @@
 
 <script>
 export default {
-  name: 'Header',
-  props: {
-
-  }
-}
+  name: "Header",
+};
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/css/header.scss';
+@import "../assets/css/header.scss";
 </style>

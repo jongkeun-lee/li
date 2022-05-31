@@ -1,12 +1,13 @@
-
 header {
   position: fixed;
-  left: 0; top: 0;
-  width: 100%; height:50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
   text-align: center;
-  background-color: #1e1e1e; /* #80F */
-  color: #fff;
-  border-bottom: 1px solid #fff;
+  // background-color: #1e1e1e; /* #80F */
+  // color: #fff;
+  // border-bottom: 1px solid #fff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -19,43 +20,56 @@ header {
     padding: 0 10px;
   }
 }
-.tag {
-  position: relative;
-  font-style: normal;
+.introLogo {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(70% - 70px);
+  z-index: 10;
+
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  b:first-child {
+    font-size: 0.8em;
+  }
+  b:last-child {
+    font-size: 1em;
+  }
+  strong {
+    display: block;
+    font-family: work-sans, sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #fff;
+    transition: all 0.4s ease-out;
+  }
+  em {
+    display: none;
+    padding-left: 25px;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    strong {
+      font-size: 7rem;
+      color: #c586c0;
+    }
+    em {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+  &:hover + canvas {
+    width: 1px;
+    height: 1px;
+    left: 50%;
+    top: 70%;
+  }
 }
-.tag::before {
-  content: "<";
-  color: #808080;
-}
-.tag.cl::before {
-  content: "</";
-  color: #808080;
-}
-.tag::after {
-  content: ">";
-  color: #808080;
-}
-.fc-b {
-  color: #569cd6;
-}
-.fc-v {
-  color: #c586c0;
-}
-.fc-g {
-  color: #3ac9b0;
-}
-.fc-y {
-  color: #ffd709;
-}
-.fc-s {
-  color: #9cdcfe;
-}
-.fc-o {
-  color: #ce9178;
-}
-.fc-a {
-  color: #d4d4d4;
-}
+
 h1 {
   /* line-height: 50px; */
   color: #d7ba6e; /* #FF5 */
@@ -63,8 +77,9 @@ h1 {
   /* font-style: normal; */
 }
 h1 b {
-  font-family: work-sans,sans-serif;
-  font-weight: 700; font-size: 50px;
+  font-family: work-sans, sans-serif;
+  font-weight: 700;
+  font-size: 50px;
 }
 h1 b:first-child {
   display: inline-block;
@@ -86,6 +101,7 @@ header p {
 }
 
 .gnb {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   background-color: #c586c0;
 }

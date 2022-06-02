@@ -30,12 +30,27 @@ canvas {
   b:last-child {
     font-size: 1em;
   }
+  @keyframes flash {
+    0%,
+    20%,
+    40%,
+    to {
+      opacity: 1;
+    }
+    10%,
+    30% {
+      opacity: 0.5;
+      color: #c586c0;
+    }
+  }
+
   strong {
     display: block;
     font-family: work-sans, sans-serif;
     font-weight: 700;
     font-size: 5rem;
     color: #fff;
+    animation: flash 2s infinite;
     transition: all 0.4s ease-out;
   }
   em {
@@ -43,10 +58,12 @@ canvas {
     padding-left: 25px;
     font-size: 1.6rem;
   }
+
   &:hover {
     strong {
       font-size: 7rem;
       color: #c586c0;
+      animation: none;
     }
     em {
       display: block;

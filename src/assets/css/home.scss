@@ -4,11 +4,11 @@
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  gap: 1px;
 
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  transition: all 0.4s ease-out;
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -22,6 +22,12 @@
   }
   &.dark {
     background: #1e1e1e;
+  }
+  &.blue {
+    background: linear-gradient(90deg, #e73c7e, #ee7752);
+  }
+  &.red {
+    background: linear-gradient(90deg, #23d5ab, #23a6d5);
   }
 }
 
@@ -45,13 +51,92 @@ ul > li {
   padding: 0.5em 0;
 }
 @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
+  // .container {
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   align-items: center;
+  // }
   section {
     min-width: 100%;
     min-height: calc(30vh);
+  }
+}
+
+.btn_wrap {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  .button {
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    background: none;
+    width: 20rem;
+    height: 20rem;
+    padding: 0;
+    margin: 1rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    .button__deco {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      color: #fff;
+      background: rgba($color: #fff, $alpha: 0.1);
+      border-radius: 50%;
+    }
+
+    .button__deco-filler {
+      position: absolute;
+      width: 150%;
+      height: 200%;
+      border-radius: 50%;
+      top: -50%;
+      left: -25%;
+      transform: translate3d(0, 75%, 0);
+    }
+
+    .button__text,
+    .button__text-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      font-size: 1.6rem;
+    }
+
+    &.btn1 {
+      // border: #23a6d5 solid 3px;
+      .button__deco-filler {
+        background: #23a6d5;
+      }
+    }
+    &.btn2 {
+      // border: #e73c7e solid 3px;
+      .button__deco-filler {
+        background: #e73c7e;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.button--hover {
+      color: #fff;
+      background: transparent;
+    }
   }
 }

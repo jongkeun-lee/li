@@ -50,7 +50,7 @@
                     <dt>어떤 프로젝트인가요?</dt>
                     <dd>
                       <div class="uploadfile_wrap">
-                        <textarea placeholder="내용을 적어주세요..."></textarea>
+                        <textarea @keyup="resize($event.target)" v-bind:style="{ height : textAreaHeight+'px'}" placeholder="내용을 적어주세요..."></textarea>
                         <div class="addfile_wrap">
                           <UploadFile />
                         </div>
@@ -86,7 +86,12 @@ import UploadFile from './commons/Upload.vue'
 
 export default {
   name: "Contact",
-  data() {},
+  data() {
+    return {
+      textAreaHeight : 100,
+
+    }
+  },
   props: {
     dark: Boolean,
   },
@@ -94,7 +99,11 @@ export default {
     UploadFile,
 
   },
-  methods: {},
+  methods: {
+    resize(area) {
+      this.textAreaHeight = area.scrollHeight;
+    },
+  },
   mounted() {},
 };
 </script>

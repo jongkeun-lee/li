@@ -1,0 +1,141 @@
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+.introLogo {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(70% - 70px);
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introLogo b:first-child {
+  font-size: 0.8em;
+}
+
+.introLogo b:last-child {
+  font-size: 1em;
+}
+
+.introLogo strong {
+  display: block;
+  font-family: work-sans, sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: #fff;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.introLogo em {
+  display: none;
+  padding-left: 25px;
+  font-size: 1.6rem;
+}
+
+.introLogo:hover strong {
+  font-size: 7rem;
+  color: #c586c0;
+}
+
+.introLogo:hover em {
+  display: block;
+  white-space: nowrap;
+}
+
+.introLogo:hover + canvas {
+  width: 1px;
+  height: 1px;
+  left: 50%;
+  top: 70%;
+}
+
+h1 {
+  /* line-height: 50px; */
+  color: #d7ba6e;
+  /* #FF5 */
+  /* font-style: normal; */
+}
+
+h1 b {
+  font-family: work-sans, sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+h1 b:first-child {
+  display: inline-block;
+  font-size: 38px;
+  /* transform:rotateY(-180deg);
+  margin-right: -13px;
+  padding-right: 10px; */
+  /* transform: rotate3d(0,1,0.5,90deg); */
+}
+
+h1 b:last-child {
+  display: inline-block;
+}
+
+header p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+header p.ti {
+  text-indent: 1em;
+}
+
+.gnb {
+  width: 40px;
+  height: 40px;
+  background-color: #c586c0;
+}

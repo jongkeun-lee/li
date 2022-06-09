@@ -1,0 +1,133 @@
+main {
+  height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #000), to(#444));
+  background: linear-gradient(to bottom, #000 70%, #444);
+}
+
+canvas {
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.introLogo {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(70% - 70px);
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introLogo b:first-child {
+  font-size: 0.8em;
+}
+
+.introLogo b:last-child {
+  font-size: 1em;
+}
+
+@-webkit-keyframes flash {
+  0%,
+  20%,
+  40%,
+  to {
+    opacity: 1;
+  }
+  10%,
+  30% {
+    opacity: 0.5;
+    color: #c586c0;
+  }
+}
+
+@keyframes flash {
+  0%,
+  20%,
+  40%,
+  to {
+    opacity: 1;
+  }
+  10%,
+  30% {
+    opacity: 0.5;
+    color: #c586c0;
+  }
+}
+
+.introLogo strong {
+  display: block;
+  font-family: work-sans, sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: #fff;
+  -webkit-animation: flash 2s infinite;
+          animation: flash 2s infinite;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.introLogo em {
+  display: none;
+  padding-left: 25px;
+  font-size: 1.6rem;
+}
+
+.introLogo:hover strong {
+  font-size: 7rem;
+  color: #c586c0;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.introLogo:hover em {
+  display: block;
+  white-space: nowrap;
+}
+
+.introLogo:hover + canvas {
+  width: 1px;
+  height: 1px;
+  left: 50%;
+  top: 70%;
+}
+
+.intro,
+.greeting {
+  width: 100%;
+  height: 50vh;
+  /*height: 50px;*/
+  text-align: center;
+  /* #80F */
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

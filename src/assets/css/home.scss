@@ -140,3 +140,59 @@ ul > li {
     }
   }
 }
+
+
+// -----start contact form -----//
+.contact_wrap {
+  overflow: scroll;
+  position: fixed;
+  padding: 150px 0;
+  height: calc(100vh - 150px);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.contact_form {
+  background-color: #ffffff22;
+  box-shadow: 0px 2px 5px #00000001;
+  padding: 20px; box-sizing: border-box;
+  border-radius: 30px;
+
+
+  form ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+    &>li {
+      text-align: left;
+      dt {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      dd {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .uploadfile_wrap {
+    // background-color: #23a6d5;
+    textarea {
+      height: 100px;
+    }
+    .addfile_wrap {
+      position: relative;
+      // margin-top: 10px;
+    }
+
+  }
+
+  .btn_wrap {
+    margin-top: 30px;
+  }
+}
+
+
+
+// -----end contact form -----// 

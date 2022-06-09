@@ -180,6 +180,14 @@ ul > li {
     // background-color: #23a6d5;
     textarea {
       height: 100px;
+      color: #333;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 12px;
+      font-family: work-sans, sans-serif;
+      &::placeholder {
+        color: #999;
+      }
     }
     .addfile_wrap {
       position: relative;

@@ -237,6 +237,28 @@ ul > li {
 
 .contact_form .uploadfile_wrap textarea {
   height: 100px;
+  color: #333;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+  font-family: work-sans, sans-serif;
+}
+
+.contact_form .uploadfile_wrap textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+.contact_form .uploadfile_wrap textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+.contact_form .uploadfile_wrap textarea::-ms-input-placeholder {
+  color: #999;
+}
+
+.contact_form .uploadfile_wrap textarea::placeholder {
+  color: #999;
 }
 
 .contact_form .uploadfile_wrap .addfile_wrap {

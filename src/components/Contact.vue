@@ -50,7 +50,7 @@
                     <dt>어떤 프로젝트인가요?</dt>
                     <dd>
                       <div class="uploadfile_wrap">
-                        <textarea></textarea>
+                        <textarea placeholder="내용을 적어주세요..."></textarea>
                         <div class="addfile_wrap">
                           <UploadFile />
                         </div>
